@@ -3,8 +3,6 @@ package com.gmail.zagurskaya.triangle.validation;
 import com.gmail.zagurskaya.triangle.constant.ErrorMessageConstants;
 import com.gmail.zagurskaya.triangle.constant.PatternConstant;
 import com.gmail.zagurskaya.triangle.entity.Point;
-import com.gmail.zagurskaya.triangle.entity.Triangle;
-import com.gmail.zagurskaya.triangle.reader.TriangleDataReader;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class DataValidation {
-    private static final Logger logger = LogManager.getLogger(TriangleDataReader.class);
+    private static final Logger logger = LogManager.getLogger(DataValidation.class);
 
     public static boolean isNumberValid(String value) {
 

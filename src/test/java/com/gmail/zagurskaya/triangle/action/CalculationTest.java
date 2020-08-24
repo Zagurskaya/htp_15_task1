@@ -28,13 +28,12 @@ public class CalculationTest extends Assert {
         double expected = 6.0;
         double actual = calculation.getArea(triangle);
         assertEquals(actual, expected, 0.000001);
-
     }
+
     @Test
     public void getPerimeterTest() {
         double expected = 12.0;
         double actual = calculation.getPerimeter(triangle);
         assertEquals(actual, expected, 0.000001);
-
     }
 }

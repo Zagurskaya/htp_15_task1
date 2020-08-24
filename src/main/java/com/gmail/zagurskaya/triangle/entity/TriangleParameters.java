@@ -1,7 +1,6 @@
 package com.gmail.zagurskaya.triangle.entity;
 
 public class TriangleParameters {
-//    private Long triangleId;
     private Double perimeter;
     private Double area;
 
@@ -34,8 +33,6 @@ public class TriangleParameters {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("TriangleParameters{")
-//                .append("triangleId=")
-//                .append(triangleId)
                 .append(", perimeter=")
                 .append(perimeter)
                 .append(", area=")

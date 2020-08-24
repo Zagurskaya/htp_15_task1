@@ -1,8 +1,5 @@
 package com.gmail.zagurskaya.triangle.entity;
 
-import lombok.Builder;
-
-@Builder
 public class Point {
     private Double x;
     private Double y;

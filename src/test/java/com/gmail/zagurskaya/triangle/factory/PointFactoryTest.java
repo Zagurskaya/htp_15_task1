@@ -25,7 +25,7 @@ public class PointFactoryTest extends Assert {
         y = 0.0;
 
         Point expected = point;
-        Point actual = pointFactory.createPoint(x,y);
+        Point actual = pointFactory.createPoint(x, y);
         assertEquals(actual, expected);
     }
 }

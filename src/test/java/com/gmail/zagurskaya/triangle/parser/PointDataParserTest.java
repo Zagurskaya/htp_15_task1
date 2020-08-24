@@ -21,8 +21,8 @@ public class PointDataParserTest extends Assert {
         row = "0.0,0.0";
 
         List<Double> expected = new ArrayList<>();
-                expected.add(Double.valueOf(0.0));
-                expected.add(Double.valueOf(0.0));
+        expected.add(Double.valueOf(0.0));
+        expected.add(Double.valueOf(0.0));
 
         List<Double> actual = pointDataParser.parseRowPointToDoubleList(row);
         assertEquals(actual, expected);

@@ -7,7 +7,7 @@ public class IdGeneratorTest extends Assert {
 
     @Test
     public void nextIdNotNullTest() {
-         Long actual = IdGenerator.nextId();
+        Long actual = IdGenerator.nextId();
         assertNotNull(actual);
     }
 }

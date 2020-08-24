@@ -1,12 +1,8 @@
 package com.gmail.zagurskaya.triangle.analyzer;
 
 import com.gmail.zagurskaya.triangle.entity.Triangle;
-import com.gmail.zagurskaya.triangle.reader.TriangleDataReader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class TriangleAnalyzer {
-    private static final Logger logger = LogManager.getLogger(TriangleDataReader.class);
 
     public static boolean isRectangularTriangle(Triangle triangle) {
         Double x1 = triangle.getPoint1().getX();

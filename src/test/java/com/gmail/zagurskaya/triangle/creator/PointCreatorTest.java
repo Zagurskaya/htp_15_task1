@@ -24,6 +24,7 @@ public class PointCreatorTest extends Assert {
         Point actual = pointCreator.createPoint(rowStringPoints);
         assertEquals(actual, expected);
     }
+
     @Test
     public void createPointTestReturnNull() {
         rowStringPoints = "0.0";

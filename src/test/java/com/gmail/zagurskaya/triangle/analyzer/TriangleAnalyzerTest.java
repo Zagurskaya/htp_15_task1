@@ -13,7 +13,7 @@ public class TriangleAnalyzerTest extends Assert {
         Point point1 = new Point(0.0, 0.0);
         Point point2 = new Point(0.0, 4.0);
         Point point3 = new Point(3.0, 0.0);
-        Triangle triangle = new Triangle(IdGenerator.nextId(),point1,point2,point3);
+        Triangle triangle = new Triangle(IdGenerator.nextId(), point1, point2, point3);
 
         boolean actual = TriangleAnalyzer.isRectangularTriangle(triangle);
         assertTrue(actual);
@@ -24,7 +24,7 @@ public class TriangleAnalyzerTest extends Assert {
         Point point1 = new Point(0.0, 0.0);
         Point point2 = new Point(0.0, 4.0);
         Point point3 = new Point(4.0, 0.0);
-        Triangle triangle = new Triangle(IdGenerator.nextId(),point1,point2,point3);
+        Triangle triangle = new Triangle(IdGenerator.nextId(), point1, point2, point3);
 
         boolean actual = TriangleAnalyzer.isIsoscelesTriangle(triangle);
         assertTrue(actual);
@@ -35,7 +35,7 @@ public class TriangleAnalyzerTest extends Assert {
         Point point1 = new Point(0.0, 0.0);
         Point point2 = new Point(1.0, 4.0);
         Point point3 = new Point(3.0, 0.0);
-        Triangle triangle = new Triangle(IdGenerator.nextId(),point1,point2,point3);
+        Triangle triangle = new Triangle(IdGenerator.nextId(), point1, point2, point3);
 
         boolean actual = TriangleAnalyzer.isEquilateralTriangle(triangle);
         assertTrue(actual);
@@ -46,7 +46,7 @@ public class TriangleAnalyzerTest extends Assert {
         Point point1 = new Point(1.0, 0.0);
         Point point2 = new Point(0.0, 4.0);
         Point point3 = new Point(3.0, 0.0);
-        Triangle triangle = new Triangle(IdGenerator.nextId(),point1,point2,point3);
+        Triangle triangle = new Triangle(IdGenerator.nextId(), point1, point2, point3);
 
         boolean actual = TriangleAnalyzer.isEquilateralTriangle(triangle);
         assertTrue(actual);

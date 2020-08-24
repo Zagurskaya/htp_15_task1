@@ -19,7 +19,7 @@ public class TriangleFactoryTest extends Assert {
 
     @BeforeTest
     public void setUp() {
-        triangleFactory =  new TriangleFactoryImpl();
+        triangleFactory = new TriangleFactoryImpl();
         point1 = new Point(0.0, 0.0);
         point2 = new Point(0.0, 4.0);
         point3 = new Point(3.0, 0.0);
@@ -30,7 +30,7 @@ public class TriangleFactoryTest extends Assert {
         triangle = new Triangle(IdGenerator.nextId(), point1, point2, point3);
 
         Triangle expected = triangle;
-        Triangle actual = triangleFactory.createTriangle(point1,point2,point3);
+        Triangle actual = triangleFactory.createTriangle(point1, point2, point3);
         assertEquals(actual, expected);
     }
 }

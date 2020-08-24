@@ -14,7 +14,7 @@ public class TriangleCreatorTest extends Assert {
 
     @BeforeTest
     public void setUp() {
-        triangleCreator =  new TriangleCreator();
+        triangleCreator = new TriangleCreator();
     }
 
     @Test
@@ -26,6 +26,7 @@ public class TriangleCreatorTest extends Assert {
         Triangle actual = triangleCreator.createTriangle(rowTriangle);
         assertEquals(actual, expected);
     }
+
     @Test
     public void createPointTestReturnNull() {
         rowTriangle = "0.0,0.0 0.0,4.0";
@@ -42,7 +43,8 @@ public class TriangleCreatorTest extends Assert {
 
     @Test
     public void createTriangleTestReturnNullByIncorrectValue() {
-        rowTriangle = "0.x0,0.0 0.0,4.0 3.0,0.0";;
+        rowTriangle = "0.x0,0.0 0.0,4.0 3.0,0.0";
+        ;
         Triangle actual = triangleCreator.createTriangle(rowTriangle);
         assertNull(actual);
     }
