@@ -2,6 +2,8 @@ package com.gmail.zagurskaya.triangle.factory;
 
 import com.gmail.zagurskaya.triangle.entity.Point;
 import com.gmail.zagurskaya.triangle.entity.Triangle;
+import com.gmail.zagurskaya.triangle.entity.TriangleParameters;
+import com.gmail.zagurskaya.triangle.entity.Warehouse;
 import com.gmail.zagurskaya.triangle.factory.impl.TriangleFactoryImpl;
 import com.gmail.zagurskaya.triangle.generator.IdGenerator;
 import org.testng.Assert;

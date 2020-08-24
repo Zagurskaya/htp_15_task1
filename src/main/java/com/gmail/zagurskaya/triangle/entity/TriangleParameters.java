@@ -1,26 +1,13 @@
 package com.gmail.zagurskaya.triangle.entity;
 
 public class TriangleParameters {
-    private Long triangleId;
+//    private Long triangleId;
     private Double perimeter;
     private Double area;
 
     public TriangleParameters() {
     }
 
-    public TriangleParameters(Long triangleId, Double perimeter, Double area) {
-        this.triangleId = triangleId;
-        this.perimeter = perimeter;
-        this.area = area;
-    }
-
-    public Long getTriangleId() {
-        return triangleId;
-    }
-
-    public void setTriangleId(Long triangleId) {
-        this.triangleId = triangleId;
-    }
 
     public TriangleParameters(Double perimeter, Double area) {
         this.perimeter = perimeter;
@@ -47,13 +34,32 @@ public class TriangleParameters {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("TriangleParameters{")
-                .append("triangleId=")
-                .append(triangleId)
+//                .append("triangleId=")
+//                .append(triangleId)
                 .append(", perimeter=")
                 .append(perimeter)
                 .append(", area=")
                 .append(area)
                 .append("}");
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TriangleParameters that = (TriangleParameters) o;
+
+        if (perimeter != null ? !perimeter.equals(that.perimeter) : that.perimeter != null) return false;
+        return area != null ? area.equals(that.area) : that.area == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = perimeter != null ? perimeter.hashCode() : 0;
+        result = 31 * result + (area != null ? area.hashCode() : 0);
+        return result;
     }
 }

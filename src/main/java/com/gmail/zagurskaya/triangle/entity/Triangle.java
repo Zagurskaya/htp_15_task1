@@ -16,13 +16,6 @@ public class Triangle {
         this.point3 = point3;
     }
 
-    public Triangle(Point point1, Point point2, Point point3) {
-        this.triangleId = 5L;
-        this.point1 = point1;
-        this.point2 = point2;
-        this.point3 = point3;
-    }
-
     public Long getTriangleId() {
         return triangleId;
     }

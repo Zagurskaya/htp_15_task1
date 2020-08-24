@@ -9,7 +9,7 @@ import com.gmail.zagurskaya.triangle.factory.TriangleParametersFactory;
 import com.gmail.zagurskaya.triangle.generator.IdGenerator;
 
 public class TriangleFactoryImpl implements TriangleFactory {
-    private final Warehouse warehouse = Warehouse.getInstance();
+    private final TriangleParametersFactory triangleParametersFactory = new TriangleParametersFactoryImpl();
 
     @Override
     public Triangle createTriangle(Point point1, Point point2, Point point3) {
@@ -17,10 +17,9 @@ public class TriangleFactoryImpl implements TriangleFactory {
     }
 
     @Override
-    public void updateTriangle(Triangle triangle) {
-        TriangleParametersFactory triangleParametersFactory = new TriangleParametersFactoryImpl();
+    public void updateTriangle(Triangle triangle,Warehouse warehouse) {
         TriangleParameters triangleParameters = triangleParametersFactory.createTriangleParameters(triangle);
-        warehouse.put(triangleParameters.getTriangleId(), triangleParameters);
+        warehouse.update(triangle.getTriangleId(), triangleParameters);
     }
 
 }
