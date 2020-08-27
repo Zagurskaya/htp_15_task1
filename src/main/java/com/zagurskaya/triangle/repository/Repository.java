@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Repository {
-    private static List<Triangle> repository = new ArrayList<>();
-    private static Repository instance = new Repository();
+    private static List<Triangle> repository;
 
     private Repository() {
 
@@ -22,8 +21,12 @@ public class Repository {
         return triangleList;
     }
 
-    public static Repository getInstance() {
-        return instance;
+    public static List<Triangle> getInstance() {
+        if (repository == null) {
+            repository = new ArrayList<>();
+            return repository;
+        }
+        return repository;
     }
 
     public boolean add(Triangle triangle) {
