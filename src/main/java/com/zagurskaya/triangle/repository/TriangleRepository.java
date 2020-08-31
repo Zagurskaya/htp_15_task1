@@ -8,22 +8,23 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Repository {
-    private static List<Triangle> repository;
+public class TriangleRepository {
+    private static TriangleRepository instance;
+    private static List<Triangle> repository =  new ArrayList<>();
 
-    private Repository() {
+    private TriangleRepository() {
 
     }
 
     public List<Triangle> query(Specification specification) {
         List<Triangle> triangleList =
-                repository.stream().filter(triangle -> specification.specify(triangle)).collect(Collectors.toList());
+                repository.stream().filter(t -> specification.specify(t)).collect(Collectors.toList());
         return triangleList;
     }
 
     public static List<Triangle> getInstance() {
-        if (repository == null) {
-            repository = new ArrayList<>();
+        if (instance == null) {
+            instance = new TriangleRepository();
             return repository;
         }
         return repository;
@@ -41,7 +42,7 @@ public class Repository {
         return repository.get(index);
     }
 
-    public void sort(Comparator<? super Triangle> c) {
-        repository.sort(c);
+    public void sort(Comparator<? super Triangle> comparator) {
+        repository.sort(comparator);
     }
 }

@@ -6,10 +6,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataValidation {
-    private static final Logger logger = LogManager.getLogger(DataValidation.class);
-    public static final String NUMBER_WITH_DELIMITER_POINT_VALIDATE_PATTERN = "\\d{0,2}+(\\.\\d{1})?";
+    static final Logger logger = LogManager.getLogger(DataValidation.class);
+    private static final String NUMBER_WITH_DELIMITER_POINT_VALIDATE_PATTERN = "\\d{0,2}+(\\.\\d{1})?";
 
 
     public static boolean isNumberValid(String value) {
@@ -22,7 +23,17 @@ public class DataValidation {
         }
     }
 
-    public static boolean isPointsValid(List<Point> points) {
+    public static boolean isPointsValid(List<String> points) {
+        List<String> coordinateList = points.stream()
+                .filter(s -> s.length() != 0)
+                .filter(s -> DataValidation.isNumberValid(s))
+                .collect(Collectors.toList());
+
+        return coordinateList.size() == 2;
+
+    }
+
+    public static boolean isTrianglePointsValid(List<Point> points) {
         return !isPointsTriangleOnLine(points) && isSizeTrianglePointsValid(points);
     }
 

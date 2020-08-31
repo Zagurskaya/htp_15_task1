@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Level;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,25 +15,17 @@ import java.util.stream.Collectors;
 
 
 public class TriangleDataReader {
-    private static final Logger logger = LogManager.getLogger(TriangleDataReader.class);
+    static final Logger logger = LogManager.getLogger(TriangleDataReader.class);
 
 
     public List<String> readTextToRowList(String fileName) {
-        String filePath = getPath(TriangleDataReader.class, fileName);
-        return readTextFromFileToRowList(filePath);
+
+        File file = new File(getClass().getClassLoader().getResource(fileName).getFile());
+        return readTextFromFileToRowTriangleList(file);
 
     }
 
-    private String getPath(Class<?> clazz, String filename) {
-        String path = clazz.getResource("").toString()
-                .replace("/com/gmail/zagurskaya/triangle/reader/", "")
-                .replace("test-classes", "classes")
-                .replace("file:/", "") + "/data/";
-
-        return path + filename;
-    }
-
-    private List<String> readTextFromFileToRowList(String path) {
+    private List<String> readTextFromFileToRowTriangleList(File path) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             return br.lines().collect(Collectors.toList());

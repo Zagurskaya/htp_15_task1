@@ -26,7 +26,7 @@ public class TriangleDataParserTest extends Assert {
         expected.add("0.0,0.0 0.0,5.0 4.0,0.0");
         expected.add("0.0,0.0 0.0,4.0 3.0,0.0");
 
-        List<String> actual = triangleDataParser.readRowTrianglePointsFromTxtToList(text);
+        List<String> actual = triangleDataParser.parsTextToRowTriangleList(text);
         assertEquals(actual, expected);
     }
 }

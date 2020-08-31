@@ -24,7 +24,7 @@ public class PointDataParserTest extends Assert {
         expected.add(Double.valueOf(0.0));
         expected.add(Double.valueOf(0.0));
 
-        List<Double> actual = pointDataParser.parseRowPointToDoubleList(row);
+        List<Double> actual = pointDataParser.parseRowPointsToDoubleList(row);
         assertEquals(actual, expected);
     }
 
@@ -33,7 +33,7 @@ public class PointDataParserTest extends Assert {
         row = "-3.0,0.0";
         List<Double> expected = new ArrayList<>();
         expected.add(Double.valueOf(0.0));
-        List<Double> actual = pointDataParser.parseRowPointToDoubleList(row);
+        List<Double> actual = pointDataParser.parseRowPointsToDoubleList(row);
         assertEquals(actual, expected);
     }
 
@@ -42,7 +42,7 @@ public class PointDataParserTest extends Assert {
         row = "a3.0,0.0";
         List<Double> expected = new ArrayList<>();
         expected.add(Double.valueOf(0.0));
-        List<Double> actual = pointDataParser.parseRowPointToDoubleList(row);
+        List<Double> actual = pointDataParser.parseRowPointsToDoubleList(row);
         assertEquals(actual, expected);
     }
 

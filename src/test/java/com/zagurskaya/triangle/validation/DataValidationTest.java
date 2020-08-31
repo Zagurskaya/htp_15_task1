@@ -39,7 +39,7 @@ public class DataValidationTest extends Assert {
         list.add(new Point(0.0, 4.0));
         list.add(new Point(3.0, 0.0));
 
-        boolean actual = DataValidation.isPointsValid(list);
+        boolean actual = DataValidation.isTrianglePointsValid(list);
         assertTrue(actual);
     }
 
@@ -50,7 +50,7 @@ public class DataValidationTest extends Assert {
         list.add(new Point(0.0, 0.0));
         list.add(new Point(0.0, 4.0));
 
-        boolean actual = DataValidation.isPointsValid(list);
+        boolean actual = DataValidation.isTrianglePointsValid(list);
         assertFalse(actual);
     }
 
@@ -62,7 +62,7 @@ public class DataValidationTest extends Assert {
         list.add(new Point(0.0, 4.0));
         list.add(new Point(0.0, 6.0));
 
-        boolean actual = DataValidation.isPointsValid(list);
+        boolean actual = DataValidation.isTrianglePointsValid(list);
         assertFalse(actual);
     }
 }

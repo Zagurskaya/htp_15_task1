@@ -12,6 +12,9 @@ public class Point {
         this.y = y;
     }
 
+    public void print() {
+    }
+
     public Double getX() {
         return x;
     }

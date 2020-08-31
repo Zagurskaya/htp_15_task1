@@ -12,23 +12,23 @@ import java.util.List;
 
 public class TriangleCreator {
 
-    public Triangle createTriangle(String rowTriangle) {
+    public Triangle create(String rowTriangle) {
 
         TriangleFactory triangleFactory = new TriangleFactoryImpl();
         PointDataParser pointDataParser = new PointDataParser();
         PointCreator pointCreator = new PointCreator();
 
         List<Point> points = new ArrayList<>();
-        List<String> pointsStringList = pointDataParser.parseRowToStringPointsList(rowTriangle);
-        pointsStringList.stream().
+        List<String> rowTrianglePointsList = pointDataParser.parseRowToStringPointsList(rowTriangle);
+        rowTrianglePointsList.stream().
                 forEach(s -> {
-                            Point point = pointCreator.createPoint(s);
+                            Point point = pointCreator.create(s);
                             if (point != null) {
                                 points.add(point);
                             }
                         }
                 );
-        return DataValidation.isPointsValid(points) ? triangleFactory.create(points.get(0), points.get(1), points.get(2)) : null;
+        return DataValidation.isTrianglePointsValid(points) ? triangleFactory.create(points.get(0), points.get(1), points.get(2)) : null;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.zagurskaya.triangle.specification.Impl;
+package com.zagurskaya.triangle.specification.impl;
 
 import com.zagurskaya.triangle.entity.Point;
 import com.zagurskaya.triangle.entity.Triangle;

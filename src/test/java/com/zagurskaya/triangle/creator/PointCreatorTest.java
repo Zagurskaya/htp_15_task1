@@ -21,28 +21,28 @@ public class PointCreatorTest extends Assert {
         rowStringPoints = "0.0,0.0";
 
         Point expected = point;
-        Point actual = pointCreator.createPoint(rowStringPoints);
+        Point actual = pointCreator.create(rowStringPoints);
         assertEquals(actual, expected);
     }
 
     @Test
     public void createPointTestReturnNull() {
         rowStringPoints = "0.0";
-        Point actual = pointCreator.createPoint(rowStringPoints);
+        Point actual = pointCreator.create(rowStringPoints);
         assertNull(actual);
     }
 
     @Test
     public void createPointTestReturnNullForNegativeValue() {
         rowStringPoints = "-3.0,0.0";
-        Point actual = pointCreator.createPoint(rowStringPoints);
+        Point actual = pointCreator.create(rowStringPoints);
         assertNull(actual);
     }
 
     @Test
     public void createPointTestReturnNullByIncorrectValue() {
         rowStringPoints = "3a.0,0.0";
-        Point actual = pointCreator.createPoint(rowStringPoints);
+        Point actual = pointCreator.create(rowStringPoints);
         assertNull(actual);
     }
 }
