@@ -29,24 +29,6 @@ public class PointDataParserTest extends Assert {
     }
 
     @Test
-    public void parseRowPointToNotFullListTest() {
-        row = "-3.0,0.0";
-        List<Double> expected = new ArrayList<>();
-        expected.add(Double.valueOf(0.0));
-        List<Double> actual = pointDataParser.parseRowPointsToDoubleList(row);
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void parseRowPointToNotFullList2Test() {
-        row = "a3.0,0.0";
-        List<Double> expected = new ArrayList<>();
-        expected.add(Double.valueOf(0.0));
-        List<Double> actual = pointDataParser.parseRowPointsToDoubleList(row);
-        assertEquals(actual, expected);
-    }
-
-    @Test
     public void parseRowToStringPointsListTest() {
         row = "0.0,0.0 0.0,5.0 4.0,0.0";
 

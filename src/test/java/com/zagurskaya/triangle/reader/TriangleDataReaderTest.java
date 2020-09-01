@@ -18,7 +18,7 @@ public class TriangleDataReaderTest extends Assert {
 
     @Test
     public void readTextToRowListTest() {
-        fileName = "data.txt";
+        fileName = "data/data.txt";
 
         List<String> expected = new ArrayList<>();
         expected.add("0.0,0.0 0.0,5.0 4.0,0.0");
