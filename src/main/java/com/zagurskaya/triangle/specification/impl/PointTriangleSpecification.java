@@ -2,12 +2,12 @@ package com.zagurskaya.triangle.specification.impl;
 
 import com.zagurskaya.triangle.entity.Point;
 import com.zagurskaya.triangle.entity.Triangle;
-import com.zagurskaya.triangle.specification.Specification;
+import com.zagurskaya.triangle.specification.TriangleSpecification;
 
-public class PointSpecification implements Specification {
+public class PointTriangleSpecification implements TriangleSpecification {
     private Point point;
 
-    public PointSpecification(Point point) {
+    public PointTriangleSpecification(Point point) {
         this.point = point;
     }
 

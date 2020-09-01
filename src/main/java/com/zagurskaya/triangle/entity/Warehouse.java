@@ -28,6 +28,9 @@ public class Warehouse {
     }
 
     public Map<Long, TriangleParameters> getParametersMap() {
-        return new HashMap<>(parametersMap);
+
+        Map<Long, TriangleParameters> parametersMapCopy = new HashMap<>();
+        parametersMapCopy.putAll(parametersMap);
+        return parametersMapCopy;
     }
 }

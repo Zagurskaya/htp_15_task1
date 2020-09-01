@@ -1,14 +1,9 @@
 package com.zagurskaya.triangle.specification.impl;
 
 import com.zagurskaya.triangle.entity.Triangle;
-import com.zagurskaya.triangle.specification.Specification;
+import com.zagurskaya.triangle.specification.TriangleSpecification;
 
-public class RectangularTriangleSpecification implements Specification {
-    private Triangle triangle;
-
-    public RectangularTriangleSpecification(Triangle triangle) {
-        this.triangle = triangle;
-    }
+public class ObtuseTriangleTriangleSpecification implements TriangleSpecification {
 
     @Override
     public boolean specify(Triangle triangle) {
@@ -25,15 +20,15 @@ public class RectangularTriangleSpecification implements Specification {
 
 
         if (isFirstSideBiggerAsOtherSide(side1, side2, side3) &&
-                Double.compare(square(side2) + square(side3), square(side1)) == 0) {
+                Double.compare(square(side2) + square(side3), square(side1)) == -1) {
             return true;
         }
         if (isFirstSideBiggerAsOtherSide(side2, side1, side3) &&
-                Double.compare(square(side1) + square(side3), square(side2)) == 0) {
+                Double.compare(square(side1) + square(side3), square(side2)) == -1) {
             return true;
         }
         if (isFirstSideBiggerAsOtherSide(side3, side2, side1) &&
-                Double.compare(square(side2) + square(side1), square(side3)) == 0) {
+                Double.compare(square(side2) + square(side1), square(side3)) == -1) {
             return true;
         }
         return false;

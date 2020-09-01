@@ -1,13 +1,17 @@
 package com.zagurskaya.triangle.entity;
 
+import com.zagurskaya.triangle.observer.Observable;
 import com.zagurskaya.triangle.observer.Observer;
 
-public class Triangle {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Triangle implements Observable {
     private Long triangleId;
     private Point point1;
     private Point point2;
     private Point point3;
-    private Observer observer;
+    private List<Observer> observers = new ArrayList<>();
 
     public Triangle() {
     }
@@ -33,7 +37,7 @@ public class Triangle {
 
     public void setPoint1(Point point1) {
         this.point1 = point1;
-        notifyObserver();
+        notifyObservers();
     }
 
     public Point getPoint2() {
@@ -42,7 +46,7 @@ public class Triangle {
 
     public void setPoint2(Point point2) {
         this.point2 = point2;
-        notifyObserver();
+        notifyObservers();
     }
 
     public Point getPoint3() {
@@ -51,7 +55,7 @@ public class Triangle {
 
     public void setPoint3(Point point3) {
         this.point3 = point3;
-        notifyObserver();
+        notifyObservers();
     }
 
     @Override
@@ -88,8 +92,18 @@ public class Triangle {
         return result;
     }
 
-    void notifyObserver() {
-        observer.actionPerformed(this);
+    @Override
+    public void attach(Observer observer) {
+        observers.add(observer);
     }
 
+    @Override
+    public void detach(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        observers.stream().forEach(o -> o.actionPerformed(this));
+    }
 }
