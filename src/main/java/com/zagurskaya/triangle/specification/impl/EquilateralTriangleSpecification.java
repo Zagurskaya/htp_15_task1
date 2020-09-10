@@ -3,7 +3,7 @@ package com.zagurskaya.triangle.specification.impl;
 import com.zagurskaya.triangle.entity.Triangle;
 import com.zagurskaya.triangle.specification.TriangleSpecification;
 
-public class EquilateralTriangleTriangleSpecification implements TriangleSpecification {
+public class EquilateralTriangleSpecification implements TriangleSpecification {
 
     @Override
     public boolean specify(Triangle triangle) {

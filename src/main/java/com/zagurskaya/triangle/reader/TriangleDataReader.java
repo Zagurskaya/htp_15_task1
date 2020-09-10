@@ -1,9 +1,9 @@
 package com.zagurskaya.triangle.reader;
 
 import com.zagurskaya.triangle.exception.TriangleException;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.Level;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,8 +19,13 @@ public class TriangleDataReader {
 
 
     public List<String> readTextToRowList(String fileName) {
-
-        File file = new File(getClass().getClassLoader().getResource(fileName).getFile());
+        File file;
+        try {
+            file = new File(getClass().getClassLoader().getResource(fileName).getFile());
+        } catch (NullPointerException e) {
+            logger.log(Level.ERROR, "Problems with the path to file", e);
+            throw new TriangleException("Problems with the path to file", e);
+        }
         return readTextFromFileToRowTriangleList(file);
 
     }

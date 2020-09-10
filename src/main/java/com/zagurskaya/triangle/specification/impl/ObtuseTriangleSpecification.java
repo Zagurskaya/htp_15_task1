@@ -3,7 +3,7 @@ package com.zagurskaya.triangle.specification.impl;
 import com.zagurskaya.triangle.entity.Triangle;
 import com.zagurskaya.triangle.specification.TriangleSpecification;
 
-public class RectangularTriangleTriangleSpecification implements TriangleSpecification {
+public class ObtuseTriangleSpecification implements TriangleSpecification {
 
     @Override
     public boolean specify(Triangle triangle) {
@@ -20,15 +20,15 @@ public class RectangularTriangleTriangleSpecification implements TriangleSpecifi
 
 
         if (isFirstSideBiggerAsOtherSide(side1, side2, side3) &&
-                Double.compare(square(side2) + square(side3), square(side1)) == 0) {
+                Double.compare(square(side2) + square(side3), square(side1)) == -1) {
             return true;
         }
         if (isFirstSideBiggerAsOtherSide(side2, side1, side3) &&
-                Double.compare(square(side1) + square(side3), square(side2)) == 0) {
+                Double.compare(square(side1) + square(side3), square(side2)) == -1) {
             return true;
         }
         if (isFirstSideBiggerAsOtherSide(side3, side2, side1) &&
-                Double.compare(square(side2) + square(side1), square(side3)) == 0) {
+                Double.compare(square(side2) + square(side1), square(side3)) == -1) {
             return true;
         }
         return false;
