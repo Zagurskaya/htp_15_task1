@@ -31,14 +31,8 @@ public class RectangularTriangleSpecificationTest extends Assert {
         repository.add(triangle1);
         repository.add(triangle2);
 
-        List<Triangle> rectangularTriangle = repository.query(specification);
-
-        System.out.println(rectangularTriangle);
-
         Triangle expected = triangle1;
         Triangle actual = repository.query(specification).get(0);
-        System.out.println(expected);
-        System.out.println(actual);
         assertEquals(actual, expected);
     }
 }
