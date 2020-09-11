@@ -1,6 +1,6 @@
 package com.zagurskaya.triangle.exception;
 
-public class TriangleException extends RuntimeException {
+public class TriangleException extends Exception {
 
     public TriangleException() {
         super();
