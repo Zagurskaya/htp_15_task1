@@ -1,6 +1,5 @@
 package com.zagurskaya.triangle.reader;
 
-import com.zagurskaya.triangle.exception.TriangleException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,8 +22,8 @@ public class TriangleDataReader {
         try {
             file = new File(getClass().getClassLoader().getResource(fileName).getFile());
         } catch (NullPointerException e) {
-            logger.log(Level.ERROR, "Problems with the path to file", e);
-            throw new TriangleException("Problems with the path to file", e);
+            logger.log(Level.FATAL, "Problems with the path to file", e);
+            throw new RuntimeException("Problems with the path to file", e);
         }
         return readTextFromFileToRowTriangleList(file);
 
@@ -36,12 +35,12 @@ public class TriangleDataReader {
             return br.lines().collect(Collectors.toList());
 
         } catch (FileNotFoundException e) {
-            logger.log(Level.ERROR, "file not found", e);
-            throw new TriangleException("file not found", e);
+            logger.log(Level.FATAL, "file not found", e);
+            throw new RuntimeException("file not found", e);
 
         } catch (IOException e) {
-            logger.log(Level.ERROR, "Problems with the path to file", e);
-            throw new TriangleException("Problems with the path to file", e);
+            logger.log(Level.FATAL, "Problems with the path to file", e);
+            throw new RuntimeException("Problems with the path to file", e);
         }
     }
 
